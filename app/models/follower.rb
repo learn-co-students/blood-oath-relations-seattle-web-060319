@@ -32,4 +32,25 @@ def self.of_a_certain_age(age)
   @@all.select{|follower| follower.age >= age}
 end
 
+def my_cults_slogan
+  cults.map{|cult| puts cult.slogan}
+end
+
+def self.most_active
+counts_arr = @@all.map{|follower| follower.cults.count}
+i = counts_arr.index(counts_arr.max)
+@@all[i]
+
+end
+
+def self.top_ten
+  f_arr = @@all.map{|follower| {follower => follower.cults.count}}
+  f_arr = f_arr.sort_by{|h| h.values}
+  if f_arr.length < 10
+    f_arr
+  else
+    f_arr[-10..-1]
+  end
+
+ end
 end
