@@ -51,6 +51,17 @@ def self.top_ten
   else
     f_arr[-10..-1]
   end
-
  end
+
+ def fellow_cult_members
+  fellow_members = []
+  self.cults.each do |my_cult|
+    fellow_members << my_cult.followers 
+  end
+  # binding.pry
+  fellow_members = fellow_members.flatten.uniq
+  fellow_members.delete(self)
+  fellow_members
+ end
+
 end

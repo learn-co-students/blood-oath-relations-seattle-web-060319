@@ -9,7 +9,7 @@ end
 a = Cult.new("flat_earthers", "seattle", 1831, "the earth is flat")
 b = Cult.new("bigfoot_hunters", "Ukraine", 2018, "he's real.")
 c = Cult.new("flat_iron_students", "seattle", 2015, "everyone shall pass")
-x = Follower.new("Chris", 40, "a whole new world")
+x = Follower.new("Christopher Columbus", 40, "a whole new world")
 y = Follower.new("Napolean", 39, "the french are the best")
 z = Follower.new("Ivan", 15, "vodka!")
 var_name = x.join_cult(c)
@@ -19,15 +19,6 @@ x.join_cult(a)
 y.join_cult(a)
 z.join_cult(a)
 z.join_cult(b)
-Follower.new("Christopher Columbus", 40, "a whole new world").join_cult(a)
-y = Follower.new("Napolean", 39, "the french are the best").join_cult(a)
-z = Follower.new("Ivan", 15, "vodka!").join_cult(a)
-x = Follower.new("Christopher Columbus", 40, "a whole new world").join_cult(b)
-y = Follower.new("Napolean", 39, "the french are the best").join_cult(b)
-x = Follower.new("Christopher Columbus", 40, "a whole new world").join_cult(b)
-y = Follower.new("Napolean", 39, "the french are the best").join_cult(c)
-q = Follower.new("tim", 15, "vodka!").join_cult(c)
-
 
 binding.pry
 

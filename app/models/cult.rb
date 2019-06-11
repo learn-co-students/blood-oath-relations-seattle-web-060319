@@ -37,8 +37,7 @@ def find_by_founding_year(year)
 end
 
 def average_age
-  f_arr = followers
-  f_arr = f_arr.map{|blood_oath| blood_oath.follower_object.age}
+  f_arr = followers.map{|follower| follower.age}
   sum = 0
   f_arr.collect{|age| sum += age}
   (sum.to_f/f_arr.length)
@@ -46,12 +45,13 @@ def average_age
 end
 
 def my_followers_mottos
-  followers.map{|blood_oath| puts blood_oath.follower_object.life_motto}
+  followers.map{|follower| puts follower.life_motto}
 
 end
 
 def followers
-    Blood_oath.all.find_all{|blood_oath| blood_oath.cult_object == self}
+    oaths = Blood_oath.all.find_all{|blood_oath| blood_oath.cult_object == self}
+    oaths.map { |oath| oath.follower_object }
 end
 
 def self.least_popular
